@@ -1,0 +1,359 @@
+.landing {
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --text: #111827;
+  --text-muted: #4b5563;
+  --border: #e5e7eb;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --radius: 12px;
+  --shadow-sm: 0 1px 3px rgba(17, 24, 39, 0.06), 0 1px 2px rgba(17, 24, 39, 0.04);
+  --shadow-md: 0 4px 12px rgba(17, 24, 39, 0.08);
+
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.landing h1,
+.landing h2,
+.landing h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.landing a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Nav */
+.lp-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(249, 250, 251, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.lp-nav__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.lp-logo {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.lp-nav__links {
+  display: flex;
+  gap: 28px;
+  flex: 1;
+  justify-content: center;
+}
+
+.lp-nav__links a {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.lp-nav__links a:hover {
+  color: var(--text);
+}
+
+/* Buttons */
+/* Selectors include the element (a.btn-primary, not just .btn-primary) so
+   their specificity beats the earlier `.landing a` link-color rule. */
+a.btn-primary,
+a.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+a.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+a.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+a.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+a.btn-secondary:hover {
+  border-color: var(--text-muted);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.88rem;
+}
+
+.btn-lg {
+  padding: 14px 28px;
+  font-size: 1rem;
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+}
+
+/* Hero */
+.lp-hero {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 120px 24px 100px;
+  text-align: center;
+}
+
+.lp-hero h1 {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  line-height: 1.15;
+}
+
+.lp-hero__sub {
+  margin: 24px auto 0;
+  max-width: 560px;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.lp-hero__actions {
+  margin-top: 40px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Features */
+.lp-features {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.lp-features h2 {
+  font-size: 1.85rem;
+  margin-bottom: 56px;
+}
+
+.lp-features__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+.lp-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 28px;
+}
+
+.lp-card__icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #eff4ff;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.lp-card__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.lp-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.lp-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* Pricing */
+.lp-pricing {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.lp-pricing h2 {
+  font-size: 1.85rem;
+}
+
+.lp-section-sub {
+  color: var(--text-muted);
+  margin: 12px 0 40px;
+}
+
+.lp-pricing__card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 36px 32px;
+  text-align: left;
+}
+
+.lp-pricing__tier {
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lp-pricing__price {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin: 8px 0 20px;
+}
+
+.lp-pricing__price span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.lp-pricing__list {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lp-pricing__list li {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  padding-left: 26px;
+  position: relative;
+}
+
+.lp-pricing__list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* About */
+.lp-about {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.lp-about h2 {
+  font-size: 1.85rem;
+  margin-bottom: 20px;
+}
+
+.lp-about p {
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+/* Final CTA */
+.lp-cta {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 24px 120px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.lp-cta h2 {
+  font-size: 2rem;
+}
+
+/* Footer */
+.lp-footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 24px;
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.lp-footer__muted {
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .lp-features__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .lp-nav__links {
+    display: none;
+  }
+
+  .lp-hero {
+    padding: 80px 20px 64px;
+  }
+
+  .lp-features,
+  .lp-pricing,
+  .lp-about {
+    padding: 56px 20px;
+  }
+}
