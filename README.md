@@ -74,6 +74,25 @@ server/                  Express API
     routes/organize.ts      POST /api/organize
 ```
 
+## Deploying (Render)
+
+This repo includes a `render.yaml` blueprint so you can deploy the whole
+app (API + built frontend) as one public web service, free tier:
+
+1. Go to [render.com](https://render.com) and sign in (GitHub login is easiest).
+2. **New +** → **Blueprint** → connect this repo (`kyleyuen3/Note-App-Idea`),
+   branch `claude/ai-note-organizer-a6brca` (or `main` once merged).
+3. Render reads `render.yaml` and proposes an `ai-note-organizer` web
+   service — click **Apply**.
+4. When prompted (or under the service's **Environment** tab), set
+   `ANTHROPIC_API_KEY` to your real key. It's marked `sync: false` in the
+   blueprint so Render asks for it instead of it ever being committed.
+5. Wait for the build to finish (a couple of minutes) — Render gives you a
+   public `https://ai-note-organizer-xxxx.onrender.com` URL.
+
+Free-tier services spin down after 15 minutes idle, so the first request
+after a while takes ~30–50s to wake back up — that's normal, not broken.
+
 ## Notes on privacy
 
 Your notes never leave your browser except when you explicitly click
